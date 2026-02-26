@@ -1,12 +1,12 @@
-fun calculateMoMoFee(amount: int, balance: int){
-    val fee = when{
+fun calculateMoMoFee(amount: Int, balance: Int){
+    val fee = when{                    // determining transaction fee using when expression 
         amount in 0..5000 -> 500
         amount in 5001..60000 -> 1000
         amount > 60000 -> 2000
         else -> 0
     }
-    val total = amount + fee
-    if (total <= balance) {
+    val total = amount + fee      // calculating total deduction
+    if (total <= balance) {      // checking if the user has enough balance 
         println("Success")
         println("Amount: $amount")
         println("Fee: $fee")
@@ -17,7 +17,7 @@ fun calculateMoMoFee(amount: int, balance: int){
     }
 }
 
-fun getGPA(score: Int): double {
+fun getGPA(score: Int): Double {
     return when {
         score in 80..100 -> 5.0
         score in 75..79 -> 4.5
